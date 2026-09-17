@@ -39,20 +39,15 @@ A voice-first neural execution system powered by **Gemini 3.1 Live API** with re
 # 📑 Table of Contents
 
 - [⚡ Overview](#-overview)
+- [🧠 Agentic Cognitive Loop & Sovereignty (v1.8.0)](#-what-is-new-the-agentic-cognitive-loop--sovereignty-upgrade-v180)
 - [🎯 What is Voice-First?](#-what-is-voice-first)
-- [✨ Core Features](#-core-features)
+- [✨ Core Features & Engineering ROI](#-core-features--system-capabilities)
 - [🔐 Code Protection & Security](#-code-protection--security)
-- [💰 Sponsorship Tiers](#-sponsorship-tiers)
 - [🏗️ Architecture](#️-architecture)
 - [💻 Tech Stack](#-tech-stack)
 - [🚀 Installation & Setup](#-installation--setup)
 - [📁 Project Structure](#-project-structure)
-- [🧠 Development Philosophy](#-development-philosophy)
-- [🤝 Contributing](#-contributing)
-- [🧩 Extending IRIS](#-extending-iris)
-- [🧠 Roadmap](#-roadmap)
-- [⚠️ Disclaimer](#️-disclaimer)
-- [👨‍💻 Architect](#-architect)
+- [👨‍💻 Maintainer & Architect](#-architect)
 - [📜 License](#-license)
 
 ---
@@ -75,16 +70,34 @@ It is a **Voice-First Desktop AI Assistant** that executes real-world actions ac
 
 ---
 
-# ✨ What's New In v1.7.0
+# 🧠 What's New: The Agentic Cognitive Loop & Sovereignty Upgrade (v1.8.0)
 
-- Added interactive **Quiz** and **Tic Tac Toe** widgets.
-- Deeper **System Control for IRIS**.
-- Completely revamped **Dashboard UI** and **Settings UI** for a seamless experience.
-- Updated AI State colors: **Thinking (Blue)**, **Speaking (Green)**, and **Standby (White)**.
-- Enhanced Infrastructure: **New server** added for more stability and control.
-- **Important**: All previous versions prior to 1.7.0 are completely deprecated and no longer function.
-- **Free Tier Rate Limit**: Free tier is now limited to 12 turns and 5 tool calls per day (resets 12:00 PM - 2:00 PM).
-- Bug fixes for Email, WhatsApp, Image Generation, Ghost Control, Wallpaper Engine, Camera, and Screen Context for AI.
+IRIS has been fundamentally re-architected from a reactive voice assistant into a **deeply reflective, safety-hardened Agentic Operating System**:
+
+### 1. 🛡️ The `<agentic_thought>` Cognitive Loop & Blast-Radius Gate
+Every incoming intent (whether from voice, keyboard shortcut, or script) now traverses an immutable **4-Phase Cognitive Reasoning & Critique Loop** before any physical OS action is dispatched:
+1. **[Intent & Context Deconstruction]** – Isolates focused workspace target, active process trees, and destination resources.
+2. **[Blast Radius & Hazard Deduction]** – Computes hazard tiers (`NONE`, `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`), destructive footprint, and reversibility.
+3. **[Critique & User Impulse Correction]** – Intercepts dangerous or naive user impulses (e.g., `rm -rf`, `killall`, `git push --force on main`, unhedged DB queries), raises a safety gate, and recommends safe atomic alternatives.
+4. **[Action & Strategy Decision]** – Halts eager execution on critical risks or authorizes deterministic RPC dispatch.
+
+### 2. 📊 Productivity ROI & Engineering Safety Ledger
+- **Embedded HUD Dashboard** ([ProductivityLedger.tsx](file:///d:/IRIS-AI/src/renderer/src/components/UI/ProductivityLedger.tsx)):
+  - Tracks **Audited Hours Saved** (e.g. 28.5+ hrs / ~RM 627+ local engineering value).
+  - Tracks **Hazards Intercepted** (preventing catastrophic workspace corruption).
+  - Tracks **Safe Ops Passed** with 100% deterministic execution logs.
+- Features an interactive in-app blast-radius simulator to test and audit the cognitive reflection engine live.
+
+### 3. 💻 Edge Sovereignty Architecture (Ollama Native)
+- **Local-First & 100% Private**: Added native IPC proxy support for local Ollama instances (`gemma3:12b`, `qwen2.5-coder`, `llama3.2`).
+- **Hybrid Routing**: Routine system analysis and safety evaluations run entirely on-premise with zero cloud egress; escalates to Gemini 3.1 Live API only for real-time duplex audio.
+
+### 4. 🔐 Zero-Trust Hardware Vault (Electron `safeStorage`)
+- **Explicit Ban on Plaintext `.env` Files**: All API keys (Gemini, Groq, Tavily, Hugging Face) and local Ollama endpoints are encrypted at rest using OS hardware keychains (Windows DPAPI / macOS Keychain). Plaintext keys never touch disk files.
+
+### 5. 🎨 Thought Stream HUD & Modern Apple Fluid UI
+- Real-time conversation stream ([RightPanel.tsx](file:///d:/IRIS-AI/src/renderer/src/components/UI/RightPanel.tsx)) parses and renders `<agentic_thought>` blocks as sleek, expandable HUD cards showing the AI's internal reasoning.
+- One-click toggle on the Dashboard between **[Productivity & ROI]** and **[3D Neural Core]**.
 
 ---
 
@@ -447,12 +460,39 @@ ipcMain.handle('tool-name', async (event, payload) => {
 })
 ```
 
-### AI Integration
+### The Agentic Cognitive Loop Pipeline
 
-- **Gemini 3.1 Live API** – Real-time voice processing
-- **Groq API** – Ultra-fast inference fallback
-- **Hugging Face** – Local model support
-- **Tavily** – Web search & research
+```mermaid
+sequenceDiagram
+    participant User as User (Voice / Shell)
+    participant Preload as Preload (Context Bridge)
+    participant Cognitive as Cognitive Loop (cognitive-loop.ts)
+    participant Vault as Vault (safeStorage)
+    participant AI as Edge Ollama / Gemini Live
+    participant Native as OS Execution (Nut.js / IPC)
+
+    User->>Preload: User Intent ("kill node process", "git push --force")
+    Preload->>Cognitive: invoke('cognitive-evaluate', payload)
+    Cognitive->>Cognitive: Phase 1: Context & Focused Window Deconstruction
+    Cognitive->>Cognitive: Phase 2: Compute Blast Radius & Hazard Tier
+    Cognitive->>Cognitive: Phase 3: Self-Critique & Impulse Correction
+    alt Critical Hazard Detected (Destructive / Irreversible)
+        Cognitive-->>User: Soft-Interception & Protective Confirmation Prompt
+    else Safe / Low-Hazard Execution Approved
+        Cognitive->>Native: Execute Validated Deterministic Action
+        Cognitive->>Cognitive: Update Productivity Ledger (+Hours Saved)
+        Native-->>User: Return Execution Result + Stream Thought HUD
+    end
+```
+
+### AI Integration & Hybrid Edge-Cloud
+
+- **Local Sovereign AI (Ollama)** – Native zero-latency on-premise execution (`gemma3:12b`, `qwen2.5-coder`, `llama3.2`)
+- **Gemini 3.1 Live API** – Real-time bidirectional WebRTC voice processing & vision
+- **Groq API** – Ultra-fast inference fallback (< 100ms)
+- **Hugging Face** – Open-source model weights
+- **Tavily** – Web search & deep research
+- **LanceDB** – Local vector database for embedded workspace RAG
 
 ---
 
@@ -1123,6 +1163,6 @@ If you find IRIS valuable, consider:
 
 ---
 
-Made with ❤️ by [Harsh Pandey](https://instagram.com/201Harshs)
+Maintained & Re-architected with ❤️ by [Wong Hanz](https://github.com/wonghanz) · Original Framework by Harsh Pandey
 
 **System Online.**
