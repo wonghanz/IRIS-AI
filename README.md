@@ -10,24 +10,20 @@
 
 <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
 
-  <a href="https://github.com/IRISX-AI/IRIS-AI/stargazers">
-    <img src="https://badgen.net/github/stars/IRISX-AI/IRIS-AI?color=10b981&icon=github" alt="GitHub stars">
+  <a href="https://github.com/wonghanz/IRIS-AI/stargazers">
+    <img src="https://badgen.net/github/stars/wonghanz/IRIS-AI?color=10b981&icon=github" alt="GitHub stars">
   </a>
 
-  <a href="https://github.com/IRISX-AI/IRIS-AI/network/members">
-    <img src="https://badgen.net/github/forks/201Harsh/IRIS-AI?color=10b981&icon=github" alt="GitHub forks">
+  <a href="https://github.com/wonghanz/IRIS-AI/network/members">
+    <img src="https://badgen.net/github/forks/wonghanz/IRIS-AI?color=10b981&icon=github" alt="GitHub forks">
   </a>
 
-  <a href="https://github.com/IRISX-AI/IRIS-AI/graphs/contributors">
-    <img src="https://badgen.net/github/contributors/IRISX-AI/IRIS-AI?color=10b981&icon=github" alt="Contributors">
+  <a href="https://github.com/wonghanz/IRIS-AI/graphs/contributors">
+    <img src="https://badgen.net/github/contributors/wonghanz/IRIS-AI?color=10b981&icon=github" alt="Contributors">
   </a>
 
-  <a href="https://github.com/sponsors/201Harsh">
-    <img src="https://badgen.net/badge/Sponsor/Support%20IRIS/ff69b4?icon=github" alt="GitHub Sponsors">
-  </a>
-
-  <a href="https://github.com/IRISX-AI/IRIS-AI/releases">
-    <img src="https://badgen.net/github/assets-dl/IRISX-AI/IRIS-AI?color=10b981&icon=github" alt="Total Downloads">
+  <a href="https://github.com/wonghanz/IRIS-AI/releases">
+    <img src="https://badgen.net/github/assets-dl/wonghanz/IRIS-AI?color=10b981&icon=github" alt="Total Downloads">
   </a>
 
 </div>
@@ -406,14 +402,12 @@ Upgrading to **IRIS Desktop PRO (₹999 + ₹27 processing fee = ₹1026 Total)*
 - **Direct Communications:** Dispatch WhatsApp messages automatically and directly send emails.
 - **Deep Work Protocol:** Execute Sequences, Terminal Run, Instantly mute distractions, kill specific apps, and optimize environment focus.
 
-### 📋 Ecosystem Governance & Administrative Fee Schedule
+### 📊 Productivity ROI & Engineering Safety Governance
 
-- 🔄 **Mobile ↔ Desktop Platform Swap Fee:** Flat **₹499** fee to transfer entitlement from Mobile to Desktop or Desktop to Mobile.
-- ✉️ **Google / Gmail Account Email Swap Fee:** Flat **₹129 per request** to transfer registered Google/Gmail account access to a new email ID.
-- 💾 **Device HWID Reset & Migration Fee:** Mandatory **₹199 per reset** to clear hardware slots or register new workstation hardware.
-- ⏳ **Inactive Account Archival (>60 Days) Fee:** **₹299** processing fee to unarchive accounts with zero activity turns for over 60 consecutive days.
-- 💳 **Gateway Dispute Operational Penalty:** **₹1000** fine for invalid/fraudulent payment chargebacks, payable prior to unban review.
-- ⚖️ **Tiered Account Unban Fine Schedule:** **₹500** (1st Offense), **₹1500** (2nd Offense), **₹5000** (3rd Offense). Post-3rd offense results in permanent unappealable HWID ban.
+- 🛡️ **Blast-Radius Hazard Interception:** Every destructive shell, file mutation, or process kill command is pre-screened through the `<agentic_thought>` Cognitive Loop.
+- ⏱️ **Audited Engineering Hours Saved:** The system keeps an immutable local ledger tracking repetitive keystrokes, shell loops, and context-switching hours saved.
+- 🔐 **Zero-Trust SafeStorage:** Plaintext `.env` keys are banned. Credentials use hardware-level encryption (Windows DPAPI / macOS Keychain).
+- 💻 **Edge Sovereignty Mode:** 100% offline model reasoning via local Ollama (`gemma3:12b` / `qwen2.5-coder`), guaranteeing zero telemetry egress for sensitive workspaces.
 
 ### How to Upgrade?
 
@@ -512,7 +506,7 @@ ipcMain.handle('tool-name', async (event, payload) => {
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/IRISX-AI/IRIS-AI
+git clone https://github.com/wonghanz/IRIS-AI
 cd IRIS-AI
 ```
 

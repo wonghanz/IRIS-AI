@@ -3,6 +3,7 @@ import { Camera, Mic, MicOff, Phone, PhoneOff, Monitor, X } from 'lucide-react'
 import RightPanel from '@renderer/components/UI/RightPanel'
 import LeftPanels from '@renderer/components/UI/LeftPanels'
 import AICore from '@renderer/components/UI/AICoreSphere'
+import ProductivityLedger from '@renderer/components/UI/ProductivityLedger'
 
 export default function Dashboard({
   isConnected,
@@ -19,6 +20,7 @@ export default function Dashboard({
 }) {
   const [visionMode, setVisionMode] = useState<'off' | 'camera' | 'screen'>('off')
   const [showVisionMenu, setShowVisionMenu] = useState(false)
+  const [centerView, setCenterView] = useState<'sphere' | 'ledger'>('ledger')
 
   const changeVisionMode = (mode: 'off' | 'camera' | 'screen') => {
     setVisionMode(mode)
@@ -35,8 +37,43 @@ export default function Dashboard({
           <LeftPanels visionMode={visionMode} />
         </div>
 
-        <div className="col-span-6 relative flex flex-col justify-end items-center pb-6 min-h-0">
-          <AICore isConnected={isConnected} isSpeaking={isSpeaking} />
+        <div className="col-span-6 relative flex flex-col justify-between items-center pb-6 min-h-0">
+          {/* Top Center Switcher */}
+          <div className="w-full flex items-center justify-between px-2 pt-0 pb-3 z-20 shrink-0">
+            <div className="flex items-center gap-1 bg-black/60 backdrop-blur-md p-1 rounded-xl border border-white/10">
+              <button
+                onClick={() => setCenterView('ledger')}
+                className={`cursor-pointer px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-lg transition-all ${
+                  centerView === 'ledger'
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_12px_rgba(16,185,129,0.2)]'
+                    : 'text-zinc-500 hover:text-white'
+                }`}
+              >
+                Productivity & ROI
+              </button>
+              <button
+                onClick={() => setCenterView('sphere')}
+                className={`cursor-pointer px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-lg transition-all ${
+                  centerView === 'sphere'
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_12px_rgba(16,185,129,0.2)]'
+                    : 'text-zinc-500 hover:text-white'
+                }`}
+              >
+                3D Neural Core
+              </button>
+            </div>
+            <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
+              {centerView === 'ledger' ? 'Cognitive Defense & ROI' : 'Synthesizing Audio Matrix'}
+            </span>
+          </div>
+
+          <div className="w-full flex-1 flex flex-col justify-center items-center relative min-h-0 mb-4 overflow-y-auto scrollbar-none">
+            {centerView === 'sphere' ? (
+              <AICore isConnected={isConnected} isSpeaking={isSpeaking} />
+            ) : (
+              <ProductivityLedger />
+            )}
+          </div>
 
           <div className="flex items-center gap-2 bg-black/60 backdrop-blur-2xl border border-white/10 p-1.5 rounded-4xl shadow-[0_20px_50px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.05)] z-20">
             <div className="relative flex items-center justify-center">

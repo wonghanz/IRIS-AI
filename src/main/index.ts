@@ -3,6 +3,10 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
+import { registerCognitiveHandlers } from './lib/cognitive-loop'
+import registerSystemHandlers from './lib/system'
+import registerVaultHandlers from './lib/vault'
+
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 1280,
@@ -60,6 +64,11 @@ app.whenReady().then(() => {
         callback()
       })
   })
+
+  // Register core system, cognitive agentic loop, and encrypted vault IPC bridges
+  registerSystemHandlers(ipcMain)
+  registerCognitiveHandlers(ipcMain)
+  registerVaultHandlers(ipcMain)
 
   createWindow()
 
